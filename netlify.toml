@@ -1,0 +1,9 @@
+# Netlify build config — Sierra (Simago) Astro site.
+# The client-editor commits content edits to `main`; Netlify rebuilds and
+# redeploys (~1–2 min). Astro outputs a static site to dist/.
+[build]
+  command = "astro build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
