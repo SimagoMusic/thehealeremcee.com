@@ -1,0 +1,110 @@
+---
+const navLinks = [
+  { href: '/music', label: 'Music' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/video', label: 'Video' },
+  { href: '/theatre', label: 'Theatre' },
+  { href: '/about', label: 'About' },
+  { href: '/hire', label: 'Hire' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" aria-label="Main navigation">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-heading text-text-heading text-sm tracking-[0.3em] uppercase hover:text-accent-gold transition-colors">
+      Simago
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-8">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="nav-link font-heading text-xs tracking-[0.2em] uppercase text-text-primary hover:text-accent-gold transition-colors"
+          data-sound="nav-hover"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden text-text-heading p-2"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-bg-deep/95 backdrop-blur-sm z-40 translate-x-full transition-transform duration-300">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <button
+        id="mobile-menu-close"
+        class="absolute top-6 right-6 text-text-heading p-2"
+        aria-label="Close navigation menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class="font-heading text-lg tracking-[0.3em] uppercase text-text-primary hover:text-accent-gold transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Sticky nav background on scroll
+  let scrolled = false;
+  window.addEventListener('scroll', () => {
+    const shouldBeScrolled = window.scrollY > window.innerHeight * 0.8;
+    if (shouldBeScrolled !== scrolled) {
+      scrolled = shouldBeScrolled;
+      if (scrolled) {
+        nav?.classList.add('bg-bg-primary/90', 'backdrop-blur-sm');
+      } else {
+        nav?.classList.remove('bg-bg-primary/90', 'backdrop-blur-sm');
+      }
+    }
+  }, { passive: true });
+
+  // Mobile menu
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('translate-x-full');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  });
+
+  const closeMenu = () => {
+    mobileMenu?.classList.add('translate-x-full');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  menuClose?.addEventListener('click', closeMenu);
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>

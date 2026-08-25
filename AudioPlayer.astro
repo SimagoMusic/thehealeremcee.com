@@ -1,0 +1,24 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = 'Preview' } = Astro.props;
+---
+
+<div class="audio-player bg-bg-deep/50 border border-white/10 rounded-lg p-4 max-w-md">
+  <div class="flex items-center gap-4">
+    <button class="play-btn w-10 h-10 flex items-center justify-center rounded-full border border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-bg-deep transition-all" aria-label={`Play ${title}`}>
+      <svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </button>
+    <div class="flex-1">
+      <p class="text-xs text-text-muted tracking-[0.1em] uppercase mb-2">{title}</p>
+      <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+        <div class="progress-bar h-full bg-accent-gold rounded-full w-0 transition-all"></div>
+      </div>
+    </div>
+    <span class="text-xs text-text-muted tabular-nums">0:00</span>
+  </div>
+  <p class="text-xs text-text-muted mt-2 italic">Audio preview coming soon</p>
+</div>
