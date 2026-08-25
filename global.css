@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0A0A0A;
+  --color-bg-deep: #050505;
+  --color-bg-crimson: #6B0F0F;
+  --color-bg-crimson-light: #8B1A1A;
+  --color-accent-gold: #C5A55A;
+  --color-accent-gold-hover: #D4B96A;
+  --color-text-primary: #F5F0EB;
+  --color-text-heading: #FFFFFF;
+  --color-text-muted: #A89F95;
+
+  --font-heading: 'Josefin Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Heading defaults */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--color-text-heading);
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(197, 165, 90, 0.3);
+  color: var(--color-text-heading);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 165, 90, 0.3);
+  border-radius: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .parallax-hero { position: relative !important; }
+}
