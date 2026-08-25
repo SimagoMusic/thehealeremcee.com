@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Simago" description="Get in touch with Simago for bookings, collaborations, press, and more.">
+  <section class="min-h-screen flex items-center justify-center py-32 px-6">
+    <div class="max-w-lg w-full">
+      <!-- EDIT: HERO -->
+      <h1 class="font-heading font-light text-text-heading uppercase tracking-[0.35em] text-center" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Contact</h1> <!-- EDIT: page heading -->
+      <p class="font-body font-light text-text-primary text-center mt-4 leading-relaxed">For bookings, collaborations, press inquiries, or just to say hello.</p> <!-- EDIT: intro paragraph -->
+
+      <!-- EDIT: CONTACT -->
+      <div class="mt-16 text-center">
+        <a href="mailto:simagomusic@gmail.com" class="btn-gold inline-block px-10 py-4 bg-accent-gold text-bg-deep uppercase text-sm tracking-[0.15em] font-heading hover:bg-accent-gold-hover transition-colors" data-sound="chime">simagomusic@gmail.com</a> <!-- EDIT: contact email -->
+        <p class="text-text-muted text-xs tracking-[0.1em] mt-6 max-w-sm mx-auto leading-relaxed">Booking · Collaboration · Press · Sound Healing · Education</p> <!-- EDIT: services line -->
+      </div>
+
+      <!-- EDIT: LOCATION -->
+      <div class="mt-20 text-center space-y-2">
+        <p class="text-text-muted text-sm">Oakland, CA</p> <!-- EDIT: location -->
+        <a href="https://instagram.com/simago" target="_blank" rel="noopener noreferrer" class="text-text-muted text-sm hover:text-accent-gold transition-colors inline-block">@simago</a> <!-- EDIT: instagram handle -->
+      </div>
+    </div>
+  </section>
+</BaseLayout>

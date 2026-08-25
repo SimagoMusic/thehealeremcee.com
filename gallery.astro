@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const images = [
+  { src: '/images/gallery/gold-fabric.jpg', alt: 'Simago wrapped in gold patterned fabric against white brick' },
+  { src: '/images/IMG_2003.jpg', alt: 'Simago portrait with red lips on staircase' },
+  { src: '/images/gallery/red-rose.jpg', alt: 'Simago with rose and Puerto Rican flag' },
+  { src: '/images/gallery/red-seat-leaning.jpg', alt: 'Simago leaning in ornate red chair' },
+  { src: '/images/IMG_7058.jpg', alt: 'Simago among red flowers and greenery' },
+  { src: '/images/gallery/singing-bowls-live.jpg', alt: 'Simago performing live with singing bowls and ensemble' },
+  { src: '/images/IMG_7055.jpg', alt: 'Simago seated near Virgin Mary statue in garden' },
+  { src: '/images/gallery/red-seat-looking.jpg', alt: 'Simago looking at camera in red chair' },
+  { src: '/images/gallery/cactus-mirror.jpg', alt: 'Simago reflection in glass with prickly pear cactus' },
+  { src: '/images/gallery/red-seat-standing.jpg', alt: 'Simago standing with gold textile draped' },
+  { src: '/images/about-portrait.jpg', alt: 'Simago portrait with headwrap and palm tree' },
+  { src: '/images/gallery/sound-healing-session.jpg', alt: 'Simago performing sound healing with singing bowls' },
+  { src: '/images/gallery/sound-bath-ceremony.jpg', alt: 'Sound bath ceremony with candles and singing bowls' },
+  { src: '/images/about-hero.jpg', alt: 'Simago in beret, B&W mirror reflection' },
+  { src: '/images/portrait-bw.jpg', alt: 'Simago B&W portrait with headwrap' },
+];
+---
+
+<BaseLayout title="Gallery — Simago" description="Photo gallery of Simago — musician, playwright, sound healer, educator.">
+  <!-- Header -->
+  <!-- EDIT: HEADER -->
+  <section class="pt-32 pb-16 bg-bg-primary">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h1 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Gallery</h1> <!-- EDIT: page heading -->
+    </div>
+  </section>
+
+  <!-- Masonry-style grid -->
+  <section class="bg-bg-primary pb-20 md:pb-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="columns-2 md:columns-3 gap-4 space-y-4">
+        {images.map(img => (
+          <div class="break-inside-avoid overflow-hidden rounded-lg group">
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

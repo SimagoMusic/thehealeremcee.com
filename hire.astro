@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Performance',
+    description: 'Live music, spoken word, and interdisciplinary performance. Available for concerts, festivals, and curated events.',
+    icon: '♪',
+  },
+  {
+    title: 'Directing & Playwriting',
+    description: 'Original theater developed with communities. Available for commissions, residencies, and collaborations.',
+    icon: '✦',
+  },
+  {
+    title: 'Sound Healing',
+    description: 'Community sound baths, private sessions, and guided experiences integrating live music and healing frequencies.',
+    icon: '◎',
+  },
+  {
+    title: 'Education & Workshops',
+    description: 'Curriculum development, artist residencies, and facilitation. Specializing in community-engaged, trauma-informed arts education. Bilingual (English/Spanish).',
+    icon: '◇',
+  },
+];
+
+const partners = [
+  'American Conservatory Theater (A.C.T.)',
+  'Kaiser Permanente Educational Theater',
+  'San Francisco Bay Area Theatre Company (SFBATCO)',
+  '826 Valencia',
+  'Oakstop Alliance',
+  'Psyched Radio',
+  'Portland Radio Project',
+];
+---
+
+<BaseLayout title="Hire — Simago" description="Book Simago for performances, sound healing, directing, education, and workshops.">
+  <!-- Header -->
+  <!-- EDIT: HEADER -->
+  <section
+    class="relative min-h-[60vh] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('/images/gallery/gold-fabric.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="relative z-10 text-center">
+      <h1 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Hire</h1> <!-- EDIT: page heading -->
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="bg-bg-primary py-20 md:py-28" data-section="services">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        {services.map(service => (
+          <div class="border border-white/[0.08] bg-white/[0.03] rounded-lg p-8 hover:border-accent-gold/30 transition-colors">
+            <span class="text-accent-gold text-2xl">{service.icon}</span>
+            <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.25em] text-sm mt-4">
+              {service.title.split('').join(' ')}
+            </h3>
+            <p class="font-body font-light text-text-primary text-sm mt-4 leading-relaxed">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <!-- EDIT: PARTNERS -->
+  <section class="bg-bg-deep py-16 md:py-20" data-section="partners">
+    <div class="max-w-3xl mx-auto text-center px-6">
+      <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.25em]" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">Select Partners</h3> <!-- EDIT: partners heading -->
+      <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
+        {partners.map(partner => (
+          <span class="text-text-muted text-sm">{partner}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <!-- EDIT: CTA -->
+  <section class="bg-bg-primary py-20 md:py-28" data-section="cta">
+    <div class="max-w-2xl mx-auto text-center px-6">
+      <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.15em]" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">Let's Work Together</h3> <!-- EDIT: cta heading -->
+      <a href="/contact" class="btn-gold inline-block mt-10 px-10 py-3 bg-accent-gold text-bg-deep uppercase text-sm tracking-[0.15em] font-heading hover:bg-accent-gold-hover transition-colors" data-sound="chime">Get in Touch</a> <!-- EDIT: cta button text -->
+      <p class="text-text-muted text-sm tracking-[0.1em] mt-4">
+        or email <a href="mailto:simagomusic@gmail.com" class="text-accent-gold hover:text-accent-gold-hover transition-colors">simagomusic@gmail.com</a> <!-- EDIT: contact email -->
+      </p>
+    </div>
+  </section>
+</BaseLayout>

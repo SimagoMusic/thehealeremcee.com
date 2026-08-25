@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const galleryImages = [
+  { src: '/images/gallery/gold-fabric.jpg', alt: 'Simago wrapped in gold patterned fabric' },
+  { src: '/images/IMG_2003.jpg', alt: 'Simago portrait with red lips' },
+  { src: '/images/gallery/red-seat-leaning.jpg', alt: 'Simago leaning in red chair' },
+  { src: '/images/IMG_7058.jpg', alt: 'Simago among flowers' },
+  { src: '/images/gallery/red-rose.jpg', alt: 'Simago with rose and Puerto Rican flag' },
+  { src: '/images/gallery/singing-bowls-live.jpg', alt: 'Simago performing with singing bowls' },
+  { src: '/images/gallery/red-seat-looking.jpg', alt: 'Simago looking at camera in red chair' },
+  { src: '/images/IMG_7055.jpg', alt: 'Simago seated near statue in garden' },
+  { src: '/images/gallery/cactus-mirror.jpg', alt: 'Simago reflection in glass with cactus' },
+  { src: '/images/gallery/red-seat-standing.jpg', alt: 'Simago standing in gold textile' },
+  { src: '/images/about-portrait.jpg', alt: 'Simago portrait with headwrap and palm tree' },
+  { src: '/images/gallery/sound-bath-ceremony.jpg', alt: 'Sound bath ceremony with singing bowls' },
+];
+---
+
+<BaseLayout title="Simago — The Healer Emcee">
+
+  <!-- Section 1: Hero -->
+  <!-- EDIT: HERO -->
+  <section class="relative min-h-screen flex items-center justify-center bg-bg-primary overflow-hidden" data-section="hero">
+    <img src="/images/red-seat/S5z-cweird-edit.jpg" alt="Simago seated in ornate chair against red background" class="absolute inset-0 w-full h-full object-cover" /> <!-- EDIT: hero background image -->
+    <div class="relative z-10 text-center px-6">
+      <div class="inline-block px-8 py-6">
+        <h1 class="font-heading font-light text-text-heading uppercase" style="font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 0.35em; text-shadow: 0 2px 20px rgba(0,0,0,0.5);">
+          SIMAGO
+        </h1> <!-- EDIT: hero name -->
+        <p class="font-heading font-light text-text-heading uppercase tracking-[0.25em] mt-4" style="font-size: clamp(1rem, 2.5vw, 1.5rem); text-shadow: 0 2px 16px rgba(0,0,0,0.5);">
+          The Healer Emcee
+        </p> <!-- EDIT: hero tagline -->
+        <p class="font-body font-light text-text-primary mt-6 max-w-[500px] mx-auto text-center leading-relaxed" style="font-size: clamp(0.95rem, 1.5vw, 1.1rem); text-shadow: 0 1px 12px rgba(0,0,0,0.4);">Playwright. Vocalist. Sound Healer. Educator.</p> <!-- EDIT: hero subtitle -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Music -->
+  <!-- EDIT: MUSIC -->
+  <section class="relative py-24 md:py-32 overflow-hidden" data-section="music">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+      aria-hidden="true"
+    >
+      <source src="/video/music-bg-loop.mp4" type="video/mp4" /> <!-- EDIT: music background video -->
+    </video>
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em] text-center" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Music
+      </h2> <!-- EDIT: music heading -->
+      <p class="font-body font-light text-text-primary mt-6 text-center max-w-2xl mx-auto leading-relaxed">
+        Healer-hop.
+      </p> <!-- EDIT: music intro -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
+        <a href="/music" class="group block">
+          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="/images/red-seat/S8z.jpg" alt="Sound of Soul" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: album 1 cover image -->
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Sound of Soul</p> <!-- EDIT: album 1 title -->
+          <p class="text-text-muted text-xs mt-1">2026</p> <!-- EDIT: album 1 year -->
+        </a>
+        <a href="/music" class="group block">
+          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="/images/red-seat/S5z.jpg" alt="Simago & The Healers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: album 2 cover image -->
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Simago & The Healers</p> <!-- EDIT: album 2 title -->
+          <p class="text-text-muted text-xs mt-1">2025</p> <!-- EDIT: album 2 year -->
+        </a>
+        <a href="/music" class="group block">
+          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="/images/IMG_1960.jpg" alt="I Am the Moon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: album 3 cover image -->
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">I Am the Moon</p> <!-- EDIT: album 3 title -->
+          <p class="text-text-muted text-xs mt-1">2022</p> <!-- EDIT: album 3 year -->
+        </a>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/music" class="font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+          Explore the full catalogue &rarr;
+        </a> <!-- EDIT: music link text -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Gallery (auto-scrolling) -->
+  <!-- EDIT: GALLERY -->
+  <section class="bg-bg-deep py-24 md:py-32 overflow-hidden" data-section="gallery">
+    <div class="max-w-5xl mx-auto px-6 mb-12">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em] text-center" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Gallery
+      </h2> <!-- EDIT: gallery heading -->
+    </div>
+    <div class="gallery-scroll-container">
+      <div class="gallery-scroll-track">
+        {galleryImages.map(img => (
+          <div class="gallery-slide">
+            <img src={img.src} alt={img.alt} loading="lazy" class="w-full h-full object-cover" />
+          </div>
+        ))}
+        {/* Duplicate for seamless loop */}
+        {galleryImages.map(img => (
+          <div class="gallery-slide" aria-hidden="true">
+            <img src={img.src} alt="" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="text-center mt-12">
+      <a href="/gallery" class="font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+        View full gallery &rarr;
+      </a> <!-- EDIT: gallery link text -->
+    </div>
+  </section>
+
+  <!-- Section 4: Video -->
+  <!-- EDIT: VIDEO -->
+  <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden" data-section="video">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+      aria-hidden="true"
+    >
+      <source src="/video/homepage-see-loop.mp4" type="video/mp4" /> <!-- EDIT: video background loop -->
+    </video>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 text-center px-6 max-w-2xl">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Video
+      </h2> <!-- EDIT: video heading -->
+      <p class="font-body font-light text-text-primary mt-6 leading-relaxed">
+        Live performance. Music videos. Sound healing. Behind the scenes.
+      </p> <!-- EDIT: video intro -->
+      <a href="/video" class="inline-block mt-8 font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+        Watch &rarr;
+      </a> <!-- EDIT: video link text -->
+    </div>
+  </section>
+
+  <!-- Section 5: Theatre -->
+  <!-- EDIT: THEATRE -->
+  <section class="bg-bg-primary py-24 md:py-32" data-section="theatre">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em] text-center" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Theatre
+      </h2> <!-- EDIT: theatre heading -->
+      <p class="font-body font-light text-text-primary mt-6 text-center max-w-2xl mx-auto leading-relaxed">
+        Original works directed for the stage.<br />
+        Theater rooted in community, cultural identity, and lived experience.
+      </p> <!-- EDIT: theatre intro -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
+        <a href="/theatre" class="group block">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg">
+            <img src="/images/theatre/stars-belong.webp" alt="The Stars Belong to All of Us" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: theatre work 1 image -->
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.15em] mt-3">The Stars Belong to All of Us</p> <!-- EDIT: theatre work 1 title -->
+        </a>
+        <a href="/theatre" class="group block">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg">
+            <img src="/images/theatre/florecer.jpeg" alt="Florecer — To Bloom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: theatre work 2 image -->
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.15em] mt-3">Florecer — To Bloom</p> <!-- EDIT: theatre work 2 title -->
+        </a>
+        <a href="/theatre" class="group block">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg">
+            <img src="/images/theatre/achievement-gap.webp" alt="Caught in the Achievement Gap" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: theatre work 3 image -->
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.15em] mt-3">Caught in the Achievement Gap</p> <!-- EDIT: theatre work 3 title -->
+        </a>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/theatre" class="font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+          View directed works &rarr;
+        </a> <!-- EDIT: theatre link text -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: About (image left, text right) -->
+  <!-- EDIT: ABOUT -->
+  <section class="bg-bg-deep py-24 md:py-32" data-section="about">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-[3/4] overflow-hidden rounded-lg">
+          <img src="/images/IMG_2003.jpg" alt="Simago portrait" class="w-full h-full object-cover" loading="lazy" /> <!-- EDIT: about portrait image -->
+        </div>
+        <div>
+          <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+            About
+          </h2> <!-- EDIT: about heading -->
+          <p class="font-body font-light text-text-primary mt-6 leading-relaxed">
+            Sierra "Simago" Gonzalez is a Puerto Rican Cuban artist —
+            Chicago born, California raised, first-generation American.
+            Musician, playwright, sound healer, educator, poet.
+          </p> <!-- EDIT: about bio -->
+          <a href="/about" class="inline-block mt-8 font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+            Read more &rarr;
+          </a> <!-- EDIT: about link text -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Hire (text left, image right) -->
+  <!-- EDIT: HIRE -->
+  <section class="bg-bg-primary py-24 md:py-32" data-section="hire">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+            Hire
+          </h2> <!-- EDIT: hire heading -->
+          <p class="font-body font-light text-text-primary mt-6 leading-relaxed">
+            Available for performances, commissions, sound healing sessions,
+            directing, workshops, and curriculum development.
+            Bilingual (English/Spanish).
+          </p> <!-- EDIT: hire description -->
+          <a href="/hire" class="inline-block mt-8 font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+            Work with me &rarr;
+          </a> <!-- EDIT: hire link text -->
+        </div>
+        <div class="order-1 md:order-2 aspect-[3/4] overflow-hidden rounded-lg">
+          <img src="/images/IMG_7058.jpg" alt="Simago among flowers and greenery" class="w-full h-full object-cover" loading="lazy" /> <!-- EDIT: hire image -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Contact (footer with background image) -->
+  <!-- EDIT: CONTACT -->
+  <section
+    class="relative py-24 md:py-32 bg-cover bg-center"
+    style="background-image: url('/images/IMG_1998_wide.jpg');"
+    data-section="contact"
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-2xl mx-auto text-center px-6">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Contact
+      </h2> <!-- EDIT: contact heading -->
+      <p class="font-body font-light text-text-primary mt-6 leading-relaxed">
+        For bookings, collaborations, press inquiries, or just to say hello.
+      </p> <!-- EDIT: contact intro -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+        <a href="mailto:simagomusic@gmail.com" class="btn-gold px-8 py-3 bg-accent-gold text-bg-deep uppercase text-sm tracking-[0.15em] font-heading hover:bg-accent-gold-hover transition-colors">Email</a> <!-- EDIT: contact email address -->
+        <a href="/contact" class="px-8 py-3 border border-accent-gold text-text-heading uppercase text-sm tracking-[0.15em] font-heading hover:bg-accent-gold hover:text-bg-deep transition-all" data-sound="chime">Contact Form</a> <!-- EDIT: contact form button text -->
+      </div>
+      <div class="mt-16 space-y-2">
+        <p class="text-text-muted text-sm tracking-[0.1em]">Oakland, CA</p> <!-- EDIT: location line -->
+        <a href="https://instagram.com/simago" target="_blank" rel="noopener noreferrer" class="text-text-muted text-sm tracking-[0.1em] hover:text-accent-gold transition-colors inline-block">@simago</a> <!-- EDIT: instagram handle -->
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .gallery-scroll-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  .gallery-scroll-track {
+    display: flex;
+    gap: 1rem;
+    animation: gallery-scroll 60s linear infinite;
+    width: max-content;
+  }
+  .gallery-slide {
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  @keyframes gallery-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .gallery-scroll-container:hover .gallery-scroll-track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-scroll-track {
+      animation: none;
+      overflow-x: auto;
+    }
+  }
+</style>

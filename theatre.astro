@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const shows = [
+  {
+    title: 'Mi Vida Como Poesia / My Life Like Poetry',
+    year: '2026',
+    role: 'Co-Director',
+    venue: 'A.C.T. x Hilltop High School',
+    description: 'An original, student-created performance that captures the lives of Hilltop High School students in the language of poetry with heartfelt beauty, strength, love, pain, paradox and irony. The show weaves together powerful personal life experiences through spoken word, movement, puppetry, storytelling, music and videography. Through raw honesty and creative collaboration, these young mothers share their lived experiences and offer their voices, stories, and truths as poetry in motion.',
+    image: '/images/theatre/dreams-watercolor.jpg',
+    link: null,
+  },
+  {
+    title: 'Lifelines in the Pipeline: Fighting Our Way Out',
+    year: '2025',
+    role: 'Director',
+    venue: 'A.C.T. x Downtown High School',
+    description: 'Can our education system break free from fostering a "school-to-prison pipeline" and instead become a "school-to-liberation" pipeline? Students investigated history, biological science, and statistics that reveal how a carceral mindset continues to shape schools. Together, they transform their discoveries into original theater pieces and an interactive educational experience. Join us in freedom-dreaming beyond the system — as we expose the pipeline and imagine true educational alternatives together.',
+    image: '/images/theatre/after-the-war.jpeg',
+    link: null,
+  },
+  {
+    title: 'Los Sueños Son Gratis / Dreams Are Free',
+    year: '2025',
+    role: 'Director / Co-Playwright',
+    venue: 'A.C.T. x Hilltop High School',
+    description: 'Written and performed by the young mothers of Hilltop High School. A bilingual community-engaged performance featuring original poetry, monologues, and scenes that explore personal and collective dreams and wishes. Through their own words, the performers share stories of resilience, ambition, and the realities of pursuing their aspirations while navigating life\'s complexities.',
+    image: '/images/theatre/dreams-are-free-poster.jpg',
+    link: 'https://www.act-sf.org/community/for-students/exhibitions/hilltop-school-dreams-are-free-los-suenos-son-gratis',
+  },
+  {
+    title: 'The Stars Belong to All of Us',
+    year: '2025',
+    role: 'Director',
+    venue: 'A.C.T. x Downtown High School',
+    description: 'What can we learn from the stars? Students explored this timeless question by examining both celestial stars and celebrity "star power" during the Jim Crow Era. The show features pieces written by the students that illuminate how past heroes of Community Cultural Wealth, like the actual stars, formed themselves under intense pressure and still shone their brightest.',
+    image: '/images/theatre/stars-belong.webp',
+    link: 'https://www.act-sf.org/community/for-students/exhibitions/downtown-high-school-the-stars-belong-to-all-of-us',
+  },
+  {
+    title: 'Florecer — To Bloom',
+    year: '2024',
+    role: 'Director / Co-Playwright',
+    venue: 'A.C.T. x Hilltop School',
+    description: 'A poetic journey through the stages of a flower\'s growth, as mirrored in the experiences of the young mothers at Hilltop School. Through a bilingual collage of original writings, the play explores different expressions of life, death, and rebirth, from the new beginnings of a seed to the full blossoming of flowers. The performance draws on the joys and challenges of adolescence, pregnancy, motherhood, immigration, love and loss.',
+    image: '/images/theatre/florecer.jpeg',
+    link: 'https://www.act-sf.org/community/for-students/exhibitions/hilltop-school-florecer-to-bloom',
+  },
+  {
+    title: 'Not a Choice',
+    year: '2024',
+    role: 'Director',
+    venue: 'A.C.T. x Downtown High School',
+    description: 'How does one of the wealthiest cities in the country have one of the largest populations of unhoused people in the nation? Students examined the houselessness crisis in San Francisco — its roots, its underlying causes, and the ways the city can support those most affected. Their show features pieces that educate us about the roots of the crisis and offer ways to be part of the change.',
+    image: '/images/theatre/not-a-choice.jpeg',
+    link: 'https://www.act-sf.org/community/for-students/exhibitions/downtown-high-school-not-a-choice',
+  },
+  {
+    title: 'After the War',
+    year: '2024',
+    role: 'Director + Sound & Prop Design',
+    venue: 'A.C.T. x Downtown High School',
+    description: 'Students examined the United States\' role in creating and perpetuating humanitarian crises around the globe. Their show features monologues, dances, scenes, and plays that educate us about the roots of these crises — Congo, Sudan, Palestine, Syria, Afghanistan, El Salvador — and offer ways we can act in solidarity.',
+    image: '/images/theatre/after-the-war.jpeg',
+    link: 'https://www.act-sf.org/community/for-students/exhibitions/downtown-high-school-after-the-war',
+  },
+  {
+    title: 'Caught in the Achievement Gap',
+    year: '2023',
+    role: 'Director',
+    venue: 'A.C.T. x Downtown High School',
+    description: 'Year after year, the achievement gap persists in San Francisco Unified School District, affecting the educational opportunities and futures of students of color. Students examined the gap in relationship to their own school experiences. Their show features monologues, dances, and short plays highlighting their research, personal journeys, and perspectives — challenging the audience to reflect and take action.',
+    image: '/images/theatre/achievement-gap.webp',
+    link: 'https://www.act-sf.org/community/for-students/exhibitions/downtown-high-school-caught-in-the-achievement-gap',
+  },
+];
+---
+
+<BaseLayout title="Theatre — Simago" description="Original theater directed by Simago at American Conservatory Theater.">
+  <!-- EDIT: HEADER -->
+  <section
+    class="relative min-h-[60vh] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('/images/theatre/after-the-war.jpeg');"
+  >
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Theatre</h1> <!-- EDIT: page heading -->
+      <p class="font-heading font-light text-text-muted uppercase tracking-[0.2em] mt-4 text-sm">Original theater created with and for community.</p> <!-- EDIT: header tagline -->
+    </div>
+  </section>
+
+  <!-- Shows — editorial alternating layout -->
+  {shows.map((show, i) => (
+    <section
+      class={`py-20 md:py-[120px] ${i % 2 === 0 ? 'bg-bg-primary' : 'bg-bg-deep'}`}
+      data-section={`show-${i}`}
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <div class={`grid md:grid-cols-5 gap-10 md:gap-16 items-center ${i % 2 !== 0 ? 'direction-rtl' : ''}`}>
+          {/* Artwork — 60% width (3/5 cols) */}
+          <div class={`md:col-span-3 ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
+            <div class="overflow-hidden rounded-lg">
+              <img
+                src={show.image}
+                alt={`${show.title} — ${show.venue}`}
+                class="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Text — 40% width (2/5 cols) */}
+          <div class={`md:col-span-2 ${i % 2 !== 0 ? 'md:order-1' : ''}`}>
+            <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.2em] text-sm md:text-base">
+              {show.title}
+            </h3>
+            <p class="text-accent-gold text-xs tracking-[0.15em] uppercase mt-2">
+              {show.year} — {show.role}
+            </p>
+            <p class="text-text-muted text-xs mt-1">{show.venue}</p>
+            <p class="font-body font-light text-text-primary text-sm mt-5 leading-relaxed">
+              {show.description}
+            </p>
+            {show.link && (
+              <a
+                href={show.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-6 font-heading text-accent-gold uppercase text-xs tracking-[0.15em] hover:text-accent-gold-hover transition-colors"
+              >
+                View on ACT &rarr;
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- EDIT: RESILIENCE CREW -->
+  <section class="relative py-20 md:py-[120px] bg-bg-crimson/30" data-section="resilience-crew">
+    <div class="max-w-3xl mx-auto text-center px-6">
+      <div class="border border-accent-gold/20 rounded-lg p-8 md:p-14 bg-bg-deep/50">
+        <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.25em]" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">The Resilience Crew</h3> <!-- EDIT: crew heading -->
+        <p class="text-accent-gold text-xs tracking-[0.15em] uppercase mt-3">Playwright — In Development</p> <!-- EDIT: crew status line -->
+        <p class="font-body font-light text-text-primary mt-6 leading-relaxed">Developed through SFBATCO's Creators Lab, an eight-week development program supporting new theatrical works. The play features rapping and original music, centering young artists as its primary characters. Early excerpts debuted Spring 2025.</p> <!-- EDIT: crew description -->
+      </div>
+    </div>
+  </section>
+</BaseLayout>

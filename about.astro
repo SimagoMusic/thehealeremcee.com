@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const timeline = [
+  { year: '2026', entries: ['Mi Vida Como Poesia — Director (ACT)', 'Sound of Soul — Album release'] },
+  { year: '2025', entries: ['Los Suenos Son Gratis — Director/Co-Playwright (ACT)', 'The Stars Belong to All of Us — Director (ACT)', 'Simago & The Healers — Album release'] },
+  { year: '2024', entries: ['Florecer — To Bloom — Director/Co-Playwright (ACT)', 'Not a Choice — Director (ACT)', 'After the War — Director (ACT)', 'The Sound of Soul — Community Sound Bath Series'] },
+  { year: '2023', entries: ['Caught in the Achievement Gap — Director (ACT)', 'Soul Speaks Sound Bath Symphony', 'The Resilience Crew — Playwright (SFBATCO Creators Lab)'] },
+  { year: '2022', entries: ['Royalty Summit — Featured Artist', 'I Am the Moon — Single release'] },
+  { year: '2019–', entries: ['Arts Educator in Residence — American Conservatory Theater'] },
+  { year: '2017–18', entries: ['Teaching Artist / Performer — Kaiser Permanente Educational Theater'] },
+  { year: '2016', entries: ['B.A. — University of the Pacific'] },
+];
+---
+
+<BaseLayout title="About — Simago" description="About Sierra 'Simago' Gonzalez — musician, playwright, sound healer, educator.">
+  <!-- EDIT: HERO -->
+  <section
+    class="relative min-h-[70vh] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('/images/about-hero.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/[0.35]"></div>
+    <div class="relative z-10 text-center">
+      <h1 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">About</h1> <!-- EDIT: hero heading -->
+    </div>
+  </section>
+
+  <!-- EDIT: BIO -->
+  <section class="bg-bg-primary py-20 md:py-28" data-section="bio">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-5 gap-12 items-start">
+        <!-- Portrait -->
+        <div class="md:col-span-2">
+          <div class="aspect-[3/4] overflow-hidden rounded-lg sticky top-24">
+            <img src="/images/about-portrait.jpg" alt="Simago portrait — wearing headwrap, palm tree in background" class="w-full h-full object-cover" loading="lazy" /> <!-- EDIT: portrait photo -->
+          </div>
+        </div>
+
+        <!-- Bio Text -->
+        <div class="md:col-span-3 space-y-6">
+          <!-- EDIT: bio paragraph 1 -->
+          <p class="font-body font-light text-text-primary leading-relaxed">
+            Sierra "Simago" Gonzalez is a Puerto Rican Cuban artist — Chicago born,
+            California raised, first-generation American. She's a musician, playwright,
+            sound healer, educator, poet, and the person who coined the term
+            "healer-hop": the fusion of spiritual jazz and hip hop, grounded in healing
+            frequencies.
+          </p>
+          <!-- EDIT: bio paragraph 2 -->
+          <p class="font-body font-light text-text-primary leading-relaxed">
+            She grew up in the arts — her father was an artist. Her own path started
+            in film, dance, and poetry, moved through theater, then guitar and piano,
+            then rap lyricism and digital production, and eventually arrived at sound
+            healing and ensemble composition. Everything she's made has led to the
+            next thing.
+          </p>
+          <!-- EDIT: bio paragraph 3 -->
+          <p class="font-body font-light text-text-primary leading-relaxed">
+            As The Healer Emcee, Simago composes and performs with crystal singing
+            bowls, gongs, chimes, and tuning forks alongside her voice and production.
+            Her words stay rooted in sacral wisdom, storytelling, and spiritual
+            practice. Through her organization Soul Speaks, she produces collaborative
+            sound healing gatherings and Sound Bath Symphony events in the Bay Area.
+            Her hip-hop work includes collaborations with Homeboy Sandman through
+            Royalty Summit and Oakstop Alliance, and features on Psyched Radio and
+            Portland Radio Project.
+          </p>
+          <!-- EDIT: bio paragraph 4 -->
+          <p class="font-body font-light text-text-primary leading-relaxed">
+            Her live shows are built like theater — structured, staged, unfolding as
+            intentional journeys. That's not a metaphor. She also directs and teaches
+            theater at American Conservatory Theater, where she's created seven
+            original works with students from under-resourced San Francisco schools.
+            Her play The Resilience Crew — developed through SFBATCO's Creators Lab —
+            features rapping and original music and centers young artists as its
+            primary characters.
+          </p>
+          <!-- EDIT: bio paragraph 5 -->
+          <p class="font-body font-light text-text-primary leading-relaxed">
+            She is bilingual in English and Spanish. She holds a Bachelor's degree
+            from the University of the Pacific.
+          </p>
+          <!-- EDIT: bio paragraph 6 -->
+          <p class="font-body font-light text-text-primary leading-relaxed">
+            A new full-length album is coming Fall 2026: small ensemble, modal and
+            improvisational, spiritual jazz and live hip hop, healing frequencies —
+            with a theatrically staged release concert in Alameda County.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDIT: TIMELINE -->
+  <section class="bg-bg-deep py-20 md:py-28" data-section="timeline">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em] text-center mb-16" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Timeline</h2> <!-- EDIT: timeline heading -->
+
+
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-[60px] md:left-[80px] top-0 bottom-0 w-px bg-accent-gold/20"></div>
+
+        <div class="space-y-10">
+          {timeline.map(item => (
+            <div class="relative flex gap-6 md:gap-8">
+              <div class="w-[60px] md:w-[80px] flex-shrink-0 text-right">
+                <span class="font-heading text-accent-gold text-sm tracking-[0.1em]">{item.year}</span>
+              </div>
+              <div class="relative pt-0.5">
+                <!-- Gold dot -->
+                <div class="absolute -left-[13px] md:-left-[17px] top-1.5 w-2.5 h-2.5 rounded-full bg-accent-gold"></div>
+                <div class="space-y-1.5">
+                  {item.entries.map(entry => (
+                    <p class="font-body font-light text-text-primary text-sm leading-relaxed">{entry}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

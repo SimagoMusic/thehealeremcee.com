@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
+
+const releases = [
+  {
+    title: 'Sound of Soul',
+    year: 2026,
+    format: 'Full-length Album',
+    image: '/images/red-seat/S8z.jpg',
+    description: 'Small ensemble. Modal, improvisational. Crystal singing bowls, chimes, gong, and tuning forks.',
+    stripeLink: '#',
+  },
+  {
+    title: 'Simago & The Healers',
+    year: 2025,
+    format: 'Music Group',
+    image: '/images/IMG_1998.jpg',
+    description: 'Collaborative ensemble project blending live instrumentation with healing frequencies.',
+    stripeLink: '#',
+  },
+  {
+    title: 'I Am the Moon',
+    year: 2022,
+    format: 'Single',
+    image: '/images/IMG_3292.jpg',
+    description: 'A meditation on intuition, cycles, and feminine power.',
+    stripeLink: '#',
+  },
+];
+---
+
+<BaseLayout title="Music — Simago" description="Music by Sierra 'Simago' Gonzalez — albums, singles, and sound healing releases.">
+  <!-- Header -->
+  <section
+    class="relative min-h-[60vh] flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('/images/IMG_1998.jpg');"
+  >
+    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="relative z-10 text-center">
+      <!-- EDIT: HEADER -->
+      <h1 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Music
+      </h1> <!-- EDIT: page heading -->
+    </div>
+  </section>
+
+  <!-- Featured Release -->
+  <!-- EDIT: FEATURED RELEASE -->
+  <section class="bg-bg-primary py-20 md:py-28" data-section="featured">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-square overflow-hidden rounded-lg">
+          <img src="/images/red-seat/S8z.jpg" alt="Sound of Soul album artwork — Simago standing with gold textile" class="w-full h-full object-cover" loading="lazy" /> <!-- EDIT: featured album artwork -->
+        </div>
+        <div>
+          <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.25em]" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">
+            Sound of Soul
+          </h2> <!-- EDIT: featured release title -->
+          <p class="text-text-muted text-sm tracking-[0.1em] mt-2">2026 — Full-length Album</p> <!-- EDIT: featured release year and format -->
+          <p class="font-body font-light text-text-primary mt-6 leading-relaxed">Small ensemble. Modal, improvisational. Crystal singing bowls, chimes, gong, and tuning forks.</p> <!-- EDIT: featured release description -->
+          <div class="mt-8">
+            <AudioPlayer title="Sound of Soul Preview" />
+          </div>
+          <span
+            class="inline-block mt-8 px-8 py-3 border border-accent-gold/40 text-accent-gold/70 uppercase text-sm tracking-[0.15em] font-heading"
+          >
+            Coming Soon
+          </span> <!-- EDIT: featured release status badge -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discography Grid -->
+  <!-- EDIT: DISCOGRAPHY -->
+  <section class="bg-bg-primary py-16" data-section="discography">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.2em] md:tracking-[0.35em] text-center mb-16" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Discography
+      </h2> <!-- EDIT: discography section heading -->
+      <div class="grid md:grid-cols-2 gap-8">
+        {releases.map(release => (
+          <div class="group border border-white/[0.08] bg-white/[0.03] rounded-lg overflow-hidden hover:border-accent-gold/30 transition-colors">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src={release.image}
+                alt={`${release.title} artwork`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.2em] text-sm">
+                {release.title}
+              </h3>
+              <p class="text-text-muted text-xs tracking-[0.1em] mt-1">{release.year} — {release.format}</p>
+              <p class="font-body font-light text-text-primary text-sm mt-3 leading-relaxed">
+                {release.description}
+              </p>
+              <div class="flex items-center gap-4 mt-6">
+                <AudioPlayer title={release.title} />
+              </div>
+              <span
+                class="inline-block mt-4 px-6 py-2 border border-accent-gold/40 text-accent-gold/70 uppercase text-xs tracking-[0.15em] font-heading"
+              >
+                Coming Soon
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sound Healing -->
+  <!-- EDIT: SOUND HEALING -->
+  <section class="bg-bg-deep py-20 md:py-28" data-section="sound-healing">
+    <div class="max-w-2xl mx-auto text-center px-6">
+      <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+        Sound Healing
+      </h2> <!-- EDIT: sound healing heading -->
+      <p class="font-body font-light text-text-primary mt-6 leading-relaxed">
+        Crystal singing bowls. Gongs. Chimes. Tuning forks.<br />
+        Positive vibrational tones woven with words rooted in sacral wisdom,
+        storytelling, and spiritual practice.
+      </p> <!-- EDIT: sound healing paragraph 1 -->
+      <p class="font-body font-light text-text-primary mt-4 leading-relaxed">
+        Through Soul Speaks, Sierra produces collaborative sound healing
+        gatherings and Sound Bath Symphony events in the Bay Area.
+      </p> <!-- EDIT: sound healing paragraph 2 -->
+      <a href="/hire" class="inline-block mt-8 font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+        Book a session &rarr;
+      </a> <!-- EDIT: sound healing button text -->
+    </div>
+  </section>
+
+  <!-- Press / Radio -->
+  <!-- EDIT: PRESS -->
+  <section class="bg-bg-primary py-16" data-section="press">
+    <div class="max-w-2xl mx-auto text-center px-6">
+      <h3 class="font-heading font-light text-text-heading uppercase tracking-[0.25em]" style="font-size: clamp(1rem, 2.5vw, 1.5rem);">
+        As Heard On
+      </h3> <!-- EDIT: press section heading -->
+      <p class="font-body font-light text-text-muted mt-4">
+        Psyched Radio &middot; Portland Radio Project
+      </p> <!-- EDIT: press outlets -->
+    </div>
+  </section>
+</BaseLayout>
