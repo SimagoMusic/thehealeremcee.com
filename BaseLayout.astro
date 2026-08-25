@@ -1,0 +1,131 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  showNav?: boolean;
+}
+
+const {
+  title,
+  description = "Sierra 'Simago' Gonzalez — Oakland-based musician, playwright, sound healer, and educator.",
+  ogImage = "/og-image.jpg",
+  showNav = true,
+} = Astro.props;
+
+const siteUrl = "https://simago.art";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const absoluteOgImage = new URL(ogImage, siteUrl).href;
+
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import SoundToggle from '../components/SoundToggle.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="Sierra Gonzalez" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={absoluteOgImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Simago — portrait of Sierra Gonzalez seated in an ornate chair against a deep red background" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Simago" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={absoluteOgImage} />
+
+  <!-- Geo -->
+  <meta name="geo.region" content="US-CA" />
+  <meta name="geo.placename" content="Oakland" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD: Person -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sierra Gonzalez",
+    "alternateName": ["Simago", "The Healer Emcee"],
+    "url": siteUrl,
+    "image": absoluteOgImage,
+    "sameAs": [
+      "https://instagram.com/simago"
+    ],
+    "jobTitle": ["Musician", "Playwright", "Sound Healer", "Educator"],
+    "description": "Sierra 'Simago' Gonzalez — Puerto Rican Cuban artist, Chicago born, California raised. Musician, playwright, sound healer, and educator. Coined the term healer-hop.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Oakland",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "email": "simagomusic@gmail.com",
+    "knowsLanguage": ["English", "Spanish"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of the Pacific"
+    },
+    "affiliation": [
+      { "@type": "Organization", "name": "American Conservatory Theater" },
+      { "@type": "Organization", "name": "Soul Speaks" }
+    ]
+  })} />
+</head>
+<body class="bg-bg-primary text-text-primary overflow-x-hidden">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-gold focus:text-bg-deep focus:px-4 focus:py-2 focus:rounded">
+    Skip to content
+  </a>
+
+  {showNav && <Navigation />}
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <footer class="bg-bg-deep py-6 text-center">
+    <p class="text-text-muted/50 text-xs tracking-[0.05em]">
+      &copy; {new Date().getFullYear()} Simago. All rights reserved.
+    </p>
+    <p class="text-text-muted/40 text-xs mt-1">
+      site by <a href="https://cweird.com" target="_blank" rel="noopener noreferrer" class="text-accent-gold hover:text-accent-gold-hover transition-colors">c.weird:</a>
+    </p>
+  </footer>
+
+  <SoundToggle />
+
+  <script src="../scripts/sound-system.ts"></script>
+</body>
+</html>
