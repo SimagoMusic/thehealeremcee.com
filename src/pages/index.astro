@@ -21,8 +21,17 @@ const galleryImages = [
 
   <!-- Section 1: Hero -->
   <!-- EDIT: HERO -->
-  <section class="relative min-h-screen flex items-center justify-center bg-bg-primary overflow-hidden" data-section="hero">
-    <img src="/images/red-seat/S5z-cweird-edit.jpg" alt="Simago seated in ornate chair against red background" class="absolute inset-0 w-full h-full object-cover" /> <!-- EDIT: hero background image -->
+  <section class="relative min-h-screen flex items-center justify-center bg-bg-primary overflow-hidden" data-section="hero" id="hero-carousel">
+    <!-- EDIT: hero carousel images — add, remove, or reorder as many as you like.
+         Each photo fades in, holds, then fades out to the next one, on a repeating loop. -->
+    <img src="/images/New Photos/S4z.jpg" alt="Simago seated in ornate red chair, gold and black textile" class="hero-slide absolute inset-0 w-full h-full object-cover is-active" />
+    <img src="/images/New Photos/S5z.jpg" alt="Simago seated in ornate red chair, gold necklace" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/S6z.jpg" alt="Simago seated in ornate red chair, hand near face" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/S7z.jpg" alt="Simago seated in ornate red chair, looking away" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/S8z.jpg" alt="Simago seated in ornate red chair, hands raised" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/IMG_2016.jpg" alt="Simago seated in ornate red chair, looking to the side" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/IMG_4031.jpg" alt="Simago seated in ornate red chair, looking away" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+
     <div class="relative z-10 text-center px-6">
       <div class="inline-block px-8 py-6">
         <h1 class="font-heading font-light text-text-heading uppercase" style="font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 0.35em; text-shadow: 0 2px 20px rgba(0,0,0,0.5);">
@@ -267,6 +276,18 @@ const galleryImages = [
 </BaseLayout>
 
 <style>
+  /* Hero carousel: each slide is stacked directly on top of the others.
+     Only the slide with .is-active showing has opacity 1; everything else is invisible.
+     The script below moves the .is-active class to the next slide on a timer,
+     and the CSS transition makes that swap fade smoothly instead of snapping. */
+  .hero-slide {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .hero-slide.is-active {
+    opacity: 1;
+  }
+
   .gallery-scroll-container {
     width: 100%;
     overflow: hidden;
@@ -298,3 +319,27 @@ const galleryImages = [
     }
   }
 </style>
+
+<script>
+  // Rotates the hero background through each .hero-slide image, fading
+  // smoothly between them. Runs once per page load.
+  function initHeroCarousel() {
+    const container = document.getElementById('hero-carousel');
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.hero-slide');
+    if (slides.length <= 1) return; // nothing to rotate between
+
+    let current = 0;
+    const HOLD_TIME_MS = 5000; // how long each photo stays fully visible before fading to the next
+
+    setInterval(() => {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, HOLD_TIME_MS);
+  }
+
+  document.addEventListener('astro:page-load', initHeroCarousel);
+  initHeroCarousel();
+</script>
