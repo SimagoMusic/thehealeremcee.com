@@ -287,15 +287,15 @@ const galleryImages = [
   }
 
   /* Makes a YouTube iframe fill its container edge-to-edge like a background
-     video, cropping the extra rather than showing black letterbox bars. */
+     video, cropping the extra rather than leaving gaps. Sized relative to its
+     own container (not the browser viewport), so it works correctly no matter
+     how tall or short that section is. */
   .yt-bg-iframe {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 177.78vh; /* 16:9 aspect ratio, oversized on purpose */
-    height: 56.25vw; /* 16:9 aspect ratio, oversized on purpose */
-    min-width: 100%;
-    min-height: 100%;
+    width: 300%;
+    height: 300%;
     transform: translate(-50%, -50%);
   }
 
