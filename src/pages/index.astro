@@ -44,16 +44,15 @@ const galleryImages = [
   <!-- Section 2: Music -->
   <!-- EDIT: MUSIC -->
   <section class="relative py-24 md:py-32 overflow-hidden" data-section="music">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      class="absolute inset-0 w-full h-full object-cover"
-      aria-hidden="true"
-    >
-      <source src="/video/music-bg-loop.mp4" type="video/mp4" /> <!-- EDIT: music background video -->
-    </video>
+    <div class="absolute inset-0 overflow-hidden" aria-hidden="true">
+      <iframe
+        src="https://www.youtube.com/embed/LABd291ZTDo?autoplay=1&mute=1&loop=1&playlist=LABd291ZTDo&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1"
+        class="yt-bg-iframe pointer-events-none"
+        title="I Am the Moon — Simago"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+      ></iframe>
+    </div>
     <div class="absolute inset-0 bg-black/70"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6">
       <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em] text-center" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
@@ -285,6 +284,19 @@ const galleryImages = [
   }
   .hero-slide.is-active {
     opacity: 1;
+  }
+
+  /* Makes a YouTube iframe fill its container edge-to-edge like a background
+     video, cropping the extra rather than showing black letterbox bars. */
+  .yt-bg-iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78vh; /* 16:9 aspect ratio, oversized on purpose */
+    height: 56.25vw; /* 16:9 aspect ratio, oversized on purpose */
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
   }
 
   .gallery-scroll-container {
