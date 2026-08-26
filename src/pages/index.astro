@@ -24,13 +24,10 @@ const galleryImages = [
   <section class="relative min-h-screen flex items-center justify-center bg-bg-primary overflow-hidden" data-section="hero" id="hero-carousel">
     <!-- EDIT: hero carousel images — add, remove, or reorder as many as you like.
          Each photo fades in, holds, then fades out to the next one, on a repeating loop. -->
-    <img src="/images/New Photos/S4z.jpg" alt="Simago seated in ornate red chair, gold and black textile" class="hero-slide absolute inset-0 w-full h-full object-cover is-active" />
-    <img src="/images/New Photos/S5z.jpg" alt="Simago seated in ornate red chair, gold necklace" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/S5z.jpg" alt="Simago seated in ornate red chair" class="hero-slide absolute inset-0 w-full h-full object-cover is-active" />
     <img src="/images/New Photos/S6z.jpg" alt="Simago seated in ornate red chair, hand near face" class="hero-slide absolute inset-0 w-full h-full object-cover" />
-    <img src="/images/New Photos/S7z.jpg" alt="Simago seated in ornate red chair, looking away" class="hero-slide absolute inset-0 w-full h-full object-cover" />
-    <img src="/images/New Photos/S8z.jpg" alt="Simago seated in ornate red chair, hands raised" class="hero-slide absolute inset-0 w-full h-full object-cover" />
-    <img src="/images/New Photos/IMG_2016.jpg" alt="Simago seated in ornate red chair, looking to the side" class="hero-slide absolute inset-0 w-full h-full object-cover" />
-    <img src="/images/New Photos/IMG_4031.jpg" alt="Simago seated in ornate red chair, looking away" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/S7z.jpg" alt="Simago seated in ornate red chair, looking forward" class="hero-slide absolute inset-0 w-full h-full object-cover" />
+    <img src="/images/New Photos/S8z.jpg" alt="Simago seated in ornate red chair, looking to the side" class="hero-slide absolute inset-0 w-full h-full object-cover" />
 
     <div class="relative z-10 text-center px-6">
       <div class="inline-block px-8 py-6">
@@ -283,6 +280,9 @@ const galleryImages = [
   .hero-slide {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
+    /* Anchors the visible crop toward the top of each photo so faces
+       stay in frame, instead of cropping around the exact center. */
+    object-position: center 15%;
   }
   .hero-slide.is-active {
     opacity: 1;
