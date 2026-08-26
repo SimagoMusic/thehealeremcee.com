@@ -63,26 +63,34 @@ const galleryImages = [
       </p> <!-- EDIT: music intro -->
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
-        <a href="/music" class="group block">
-          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
-            <img src="/images/red-seat/S8z.jpg" alt="Sound of Soul" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: album 1 cover image -->
+        <!-- Track 1: Stay — not yet released, so it's marked Coming Soon instead of linking out -->
+        <div class="group block">
+          <div class="relative aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="/images/New Photos/stay-cover.jpg" alt="Stay — single cover art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <span class="absolute top-2 right-2 px-2 py-1 bg-bg-deep/80 border border-accent-gold/40 text-accent-gold text-[10px] uppercase tracking-[0.1em] rounded">Coming Soon</span>
           </div>
-          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Sound of Soul</p> <!-- EDIT: album 1 title -->
-          <p class="text-text-muted text-xs mt-1">2026</p> <!-- EDIT: album 1 year -->
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Stay</p>
+          <p class="text-text-muted text-xs mt-1">From The Healer Emcee</p>
+        </div>
+
+        <!-- Track 2: The Journey (feat. Simago) — from The Royalty Summit, links to Spotify -->
+        <!-- EDIT: this links to the whole album for now — swap in a direct song link once you have one -->
+        <a href="https://open.spotify.com/album/7gHLogvCgoiXKdbhU10nGa?si=nFTe8-w5S1608mzSlYRYuQ" target="_blank" rel="noopener noreferrer" class="group block" data-sound="chime">
+          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="/images/New Photos/the-journey-cover.jpg" alt="The Journey — single cover art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">The Journey</p>
+          <p class="text-text-muted text-xs mt-1">feat. Simago — The Royalty Summit</p>
         </a>
-        <a href="/music" class="group block">
+
+        <!-- Track 3: Voice of My Own (feat. Simago) — from The Royalty Summit, links to Spotify -->
+        <!-- EDIT: this links to the whole album for now — swap in a direct song link once you have one -->
+        <a href="https://open.spotify.com/album/7gHLogvCgoiXKdbhU10nGa?si=nFTe8-w5S1608mzSlYRYuQ" target="_blank" rel="noopener noreferrer" class="group block" data-sound="chime">
           <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
-            <img src="/images/red-seat/S5z.jpg" alt="Simago & The Healers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: album 2 cover image -->
+            <img src="/images/New Photos/royalty-summit-cover.jpg" alt="Voice of My Own — The Royalty Summit album cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Simago & The Healers</p> <!-- EDIT: album 2 title -->
-          <p class="text-text-muted text-xs mt-1">2025</p> <!-- EDIT: album 2 year -->
-        </a>
-        <a href="/music" class="group block">
-          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
-            <img src="/images/IMG_1960.jpg" alt="I Am the Moon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" /> <!-- EDIT: album 3 cover image -->
-          </div>
-          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">I Am the Moon</p> <!-- EDIT: album 3 title -->
-          <p class="text-text-muted text-xs mt-1">2022</p> <!-- EDIT: album 3 year -->
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Voice of My Own</p>
+          <p class="text-text-muted text-xs mt-1">feat. Simago — The Royalty Summit</p>
         </a>
       </div>
 
@@ -138,15 +146,34 @@ const galleryImages = [
       <source src="/video/homepage-see-loop.mp4" type="video/mp4" /> <!-- EDIT: video background loop -->
     </video>
     <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative z-10 text-center px-6 max-w-2xl">
+    <div class="relative z-10 text-center px-6 max-w-3xl">
       <h2 class="font-heading font-light text-text-heading uppercase tracking-[0.35em]" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
         Video
       </h2> <!-- EDIT: video heading -->
       <p class="font-body font-light text-text-primary mt-6 leading-relaxed">
         Live performance. Music videos. Sound healing. Behind the scenes.
       </p> <!-- EDIT: video intro -->
-      <a href="/video" class="inline-block mt-8 font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
-        Watch &rarr;
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 max-w-xl mx-auto">
+        <!-- Video 1: Demon in my Head — thumbnail pulled automatically from YouTube -->
+        <a href="https://www.youtube.com/watch?v=HRQqPA6liNk" target="_blank" rel="noopener noreferrer" class="group block" data-sound="chime">
+          <div class="aspect-video overflow-hidden rounded-lg border border-white/[0.15] group-hover:border-accent-gold/40 transition-colors">
+            <img src="https://img.youtube.com/vi/HRQqPA6liNk/hqdefault.jpg" alt="Demon in my Head — YouTube video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Demon in my Head</p>
+        </a>
+
+        <!-- Video 2: I Am the Moon — thumbnail pulled automatically from YouTube -->
+        <a href="https://youtu.be/LABd291ZTDo" target="_blank" rel="noopener noreferrer" class="group block" data-sound="chime">
+          <div class="aspect-video overflow-hidden rounded-lg border border-white/[0.15] group-hover:border-accent-gold/40 transition-colors">
+            <img src="https://img.youtube.com/vi/LABd291ZTDo/hqdefault.jpg" alt="I Am the Moon — YouTube video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">I Am the Moon</p>
+        </a>
+      </div>
+
+      <a href="/video" class="inline-block mt-10 font-heading text-accent-gold uppercase text-sm tracking-[0.15em] hover:text-accent-gold-hover transition-colors" data-sound="chime">
+        See all videos &rarr;
       </a> <!-- EDIT: video link text -->
     </div>
   </section>
