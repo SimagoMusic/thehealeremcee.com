@@ -28,7 +28,7 @@ const galleryImages = [
         <h1 class="font-heading font-light text-text-heading uppercase mt-16" style="font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: 0.35em; text-shadow: 0 0 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.7), 0 2px 20px rgba(0,0,0,0.6);">
           SIMAGO
         </h1> <!-- EDIT: hero name -->
-        <p class="font-heading font-light text-text-heading uppercase tracking-[0.25em] mt-4" style="font-size: clamp(1rem, 2.5vw, 1.5rem); text-shadow: 0 0 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.7), 0 2px 16px rgba(0,0,0,0.6);">
+        <p class="font-heading font-light text-text-heading uppercase tracking-[0.25em] mt-4" style="font-size: clamp(1.4rem, 3.5vw, 2.1rem); text-shadow: 0 0 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.7), 0 2px 16px rgba(0,0,0,0.6);">
           The Healer Emcee
         </p> <!-- EDIT: hero tagline -->
         <p class="font-body font-light text-text-primary mt-6 max-w-[500px] mx-auto text-center leading-relaxed flex flex-wrap justify-center gap-x-3 gap-y-1" style="font-size: clamp(0.95rem, 1.5vw, 1.1rem); text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7), 0 1px 12px rgba(0,0,0,0.5);">
@@ -59,10 +59,10 @@ const galleryImages = [
         Music
       </h2> <!-- EDIT: music heading -->
       <p class="font-body font-light text-text-primary mt-6 text-center max-w-2xl mx-auto leading-relaxed">
-        Healer-hop.
-      </p> <!-- EDIT: music intro -->
+        <span class="text-accent-gold">Healer Hop™</span> — a genre of Simago's own making: hip-hop and jazz-inflected alternative music woven together with healing tones, singing bowl frequencies, and meditative soundscapes.
+      </p> <!-- EDIT: music intro / Healer Hop definition -->
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mt-14">
         <!-- Track 1: Stay — not yet released, so it's marked Coming Soon instead of linking out -->
         <div class="group block">
           <div class="relative aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
@@ -70,7 +70,7 @@ const galleryImages = [
             <span class="absolute top-2 right-2 px-2 py-1 bg-bg-deep/80 border border-accent-gold/40 text-accent-gold text-[10px] uppercase tracking-[0.1em] rounded">Coming Soon</span>
           </div>
           <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Stay</p>
-          <p class="text-text-muted text-xs mt-1">From The Healer Emcee</p>
+          <p class="text-text-muted text-xs mt-1">From the album The Healer Emcee</p>
         </div>
 
         <!-- Track 2: The Journey (feat. Simago) — from The Royalty Summit, links to Spotify -->
@@ -80,7 +80,8 @@ const galleryImages = [
             <img src="/images/New Photos/the-journey-cover.jpg" alt="The Journey — single cover art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">The Journey</p>
-          <p class="text-text-muted text-xs mt-1">feat. Simago — The Royalty Summit</p>
+          <p class="text-text-muted text-xs mt-1">feat. Simago — single from The Royalty Summit</p>
+          <p class="text-accent-gold text-[10px] uppercase tracking-[0.15em] mt-1">Click to listen</p>
         </a>
 
         <!-- Track 3: Voice of My Own (feat. Simago) — from The Royalty Summit, links to Spotify -->
@@ -90,7 +91,28 @@ const galleryImages = [
             <img src="/images/New Photos/royalty-summit-cover.jpg" alt="Voice of My Own — The Royalty Summit album cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Voice of My Own</p>
-          <p class="text-text-muted text-xs mt-1">feat. Simago — The Royalty Summit</p>
+          <p class="text-text-muted text-xs mt-1">feat. Simago — single from The Royalty Summit</p>
+          <p class="text-accent-gold text-[10px] uppercase tracking-[0.15em] mt-1">Click to listen</p>
+        </a>
+
+        <!-- Track 4: Demon in my Head — YouTube video, thumbnail pulled automatically from YouTube -->
+        <a href="https://www.youtube.com/watch?v=HRQqPA6liNk" target="_blank" rel="noopener noreferrer" class="group block" data-sound="chime">
+          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="https://img.youtube.com/vi/HRQqPA6liNk/hqdefault.jpg" alt="Demon in my Head — YouTube video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Demon in my Head</p>
+          <p class="text-text-muted text-xs mt-1">From the album The Healer Emcee</p>
+          <p class="text-accent-gold text-[10px] uppercase tracking-[0.15em] mt-1">Click to watch</p>
+        </a>
+
+        <!-- Track 5: I Am the Moon — YouTube video, thumbnail pulled automatically from YouTube -->
+        <a href="https://youtu.be/LABd291ZTDo" target="_blank" rel="noopener noreferrer" class="group block" data-sound="chime">
+          <div class="aspect-square overflow-hidden rounded-lg border border-white/[0.08] group-hover:border-accent-gold/30 transition-colors">
+            <img src="https://img.youtube.com/vi/LABd291ZTDo/hqdefault.jpg" alt="I Am the Moon — YouTube video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">I Am the Moon</p>
+          <p class="text-text-muted text-xs mt-1">From the album The Healer Emcee</p>
+          <p class="text-accent-gold text-[10px] uppercase tracking-[0.15em] mt-1">Click to watch</p>
         </a>
       </div>
 
@@ -161,6 +183,7 @@ const galleryImages = [
             <img src="https://img.youtube.com/vi/HRQqPA6liNk/hqdefault.jpg" alt="Demon in my Head — YouTube video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">Demon in my Head</p>
+          <p class="text-accent-gold text-[10px] uppercase tracking-[0.15em] mt-1">Click to watch</p>
         </a>
 
         <!-- Video 2: I Am the Moon — thumbnail pulled automatically from YouTube -->
@@ -169,6 +192,7 @@ const galleryImages = [
             <img src="https://img.youtube.com/vi/LABd291ZTDo/hqdefault.jpg" alt="I Am the Moon — YouTube video" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
           <p class="font-heading text-text-heading uppercase text-xs tracking-[0.2em] mt-3">I Am the Moon</p>
+          <p class="text-accent-gold text-[10px] uppercase tracking-[0.15em] mt-1">Click to watch</p>
         </a>
       </div>
 
