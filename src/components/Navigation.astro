@@ -72,7 +72,6 @@ const navLinks = [
   const menuClose = document.getElementById('mobile-menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  // Sticky nav background on scroll
   let scrolled = false;
   window.addEventListener('scroll', () => {
     const shouldBeScrolled = window.scrollY > window.innerHeight * 0.8;
@@ -86,7 +85,6 @@ const navLinks = [
     }
   }, { passive: true });
 
-  // Mobile menu
   menuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.remove('translate-x-full');
     menuBtn.setAttribute('aria-expanded', 'true');
