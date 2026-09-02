@@ -12,16 +12,16 @@ const navLinks = [
 
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" aria-label="Main navigation">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="font-heading text-text-heading text-sm tracking-[0.3em] uppercase hover:text-accent-gold transition-colors">
+    <a href="/" class="font-heading font-bold text-white text-sm tracking-[0.3em] uppercase hover:text-accent-gold transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
       Simago
     </a>
 
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
       {navLinks.map(link => (
-        <a
+        
           href={link.href}
-          class="nav-link font-heading text-xs tracking-[0.2em] uppercase text-text-primary hover:text-accent-gold transition-colors"
+          class="nav-link font-heading font-bold text-xs tracking-[0.2em] uppercase text-white hover:text-accent-gold transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
           data-sound="nav-hover"
         >
           {link.label}
@@ -32,7 +32,7 @@ const navLinks = [
     <!-- Mobile hamburger -->
     <button
       id="mobile-menu-btn"
-      class="md:hidden text-text-heading p-2"
+      class="md:hidden text-white p-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
       aria-label="Open navigation menu"
       aria-expanded="false"
     >
@@ -47,7 +47,7 @@ const navLinks = [
     <div class="flex flex-col items-center justify-center h-full gap-8">
       <button
         id="mobile-menu-close"
-        class="absolute top-6 right-6 text-text-heading p-2"
+        class="absolute top-6 right-6 text-white p-2"
         aria-label="Close navigation menu"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,9 +55,9 @@ const navLinks = [
         </svg>
       </button>
       {navLinks.map(link => (
-        <a
+        
           href={link.href}
-          class="font-heading text-lg tracking-[0.3em] uppercase text-text-primary hover:text-accent-gold transition-colors"
+          class="font-heading font-bold text-lg tracking-[0.3em] uppercase text-white hover:text-accent-gold transition-colors"
         >
           {link.label}
         </a>
