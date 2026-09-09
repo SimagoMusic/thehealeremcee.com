@@ -26,14 +26,19 @@ const photoshoots = [
     photographer: 'Rohan DaCosta',
     photographerHandle: 'Play Date Photo',
     photographerUrl: 'https://www.instagram.com/playdatephoto/',
-    count: 7,
+    photos: [
+      '/images/red-regality-shoot/S1z2.jpg',
+      '/images/red-regality-shoot/S2z2.jpg',
+      '/images/red-regality-shoot/S3z.jpg',
+      '/images/red-regality-shoot/S5z.jpg',
+      '/images/red-regality-shoot/S5z-cweird-edit.jpg',
+      '/images/red-regality-shoot/S8z.jpg',
+      '/images/red-regality-shoot/S9z.jpg',
+    ],
   },
 ];
 
-const photoshootsWithPhotos = photoshoots.map(shoot => ({
-  ...shoot,
-  photos: Array.from({ length: shoot.count }, (_, i) => `/images/${shoot.id}-shoot/${i + 1}.jpg`),
-}));
+const photoshootsWithPhotos = photoshoots;
 ---
 
 <BaseLayout title="Simago — The Healer Emcee">
